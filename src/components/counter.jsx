@@ -9,6 +9,11 @@ class Counter extends Component {
     }
 
     render() {
+
+        // now we're passing props to this component
+        // Check the console.log
+        // NOTE: 'key' is not part of the props as its used by React to index the list
+        console.log(this.props)
         
         let classes = this.GetBadgeClasses();
         
