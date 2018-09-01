@@ -25,7 +25,7 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button 
-                onClick={this.handleIncrement} 
+                onClick={this.doHandleIncrement} 
                 className='btn btn-secondary btn-sm'>
                 Increment
             </button>
