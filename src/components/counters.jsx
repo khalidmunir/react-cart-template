@@ -19,19 +19,20 @@ class Counters extends Component {
         this.setState({ counters })
     }
 
+    // a single source of truth. 
+    // we have achieved this by removing the local state of the counter and raising it here.
+    // In the Counter THe code was refactored to remve refrences to the state and insted relyed on props
+    // Also moved the increment responsibility - raised to the Counters 
+
     handleIncrement = (counter) => {
         const counters = [ ...this.state.counters]
         const index = counters.indexOf(counter)
         counters[index] = { ...counter }
         counters[index].value++
         
-        console.log('counter', this.state.counters[index])
+        this.setState({ counters })
     }
-    // So try this - it might surprise you this does not update the DOM.
-    // the state exists in the Counter and also the Counters, so we are missing 
-    // a single source of truth. 
-    // we can achieve this by removing the local state of the counter and raising it to the Counters.
-    // we'll do this for the next commit.
+    
     handleReset = () => {
         const counters = this.state.counters.map(counter => {
             counter.value = 0

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 class Counter extends Component {
-  
+    // In the Counter The code was refactored to remve refrences to the state and insted relyed on props
+    // Also moved the increment responsibility - raised to the Counters 
     render() {
         console.log("this.props", this.props)
         
