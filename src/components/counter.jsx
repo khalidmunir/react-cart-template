@@ -13,13 +13,21 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button className='btn btn-secondary btn-sm'>Increment</button>
-            <ul>
-                { this.state.listItems.map( item => <li key={item}>{item}</li>)}
-            </ul>
+            {this.renderList()}
         </React.Fragment>
         )
     }
     
+    renderList() {
+        if (this.state.listItems.length === 0 ) return <p>There is no List <br />(This is not the list your looking for! :)</p>
+        
+        return (
+            <ul>
+                { this.state.listItems.map( item => <li key={item}>{item}</li> ) }
+            </ul>
+        )
+    }
+
     GetBadgeClasses() {
         // moved out of render method - don't bloat the render function - where possible  
         let classes = 'badge m-2 badge-';
