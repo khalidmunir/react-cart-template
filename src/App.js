@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/navbar'
-import Counter from './components/counter'
 import Counters from './components/counters'
 
 //  This is the current layout for the State and now we can share 
