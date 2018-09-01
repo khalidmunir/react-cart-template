@@ -15,18 +15,32 @@ class Counters extends Component {
     }
 
     handleDelete = (counterId) => {
-        // now fix the delete counter and allow react to update the DOM
         const counters = this.state.counters.filter(counter => counter.id !== counterId)
-        this.setState({ counters})
+        this.setState({ counters })
+    }
+
+    // So try this - it might surprise you this does not update the DOM.
+    // the state exists in the Counter and also the Counters, so we are missing 
+    // a single source of truth. 
+    // we can achieve this by removing the local state of the counter and raising it to the Counters.
+    // we'll do this for the next commit.
+    handleReset = () => {
+        const counters = this.state.counters.map(counter => {
+            counter.value = 0
+            return counter
+        })
+
+        this.setState({ counters })
     }
 
     render() {
         return (
-            // Adding more attributes to counter might make this parameter list 
-            // a little large and unmanagable. 
-            // just pass the counter down since it contains everything.
-            // i.e. counter={counter} then refactor the Counter code
             <div>
+                <button 
+                    onClick={this.handleReset}
+                    className='btn btn-primary btn-sm m-2'>
+                    Reset
+                </button>
                 { this.state.counters.map( counter => (
                     <Counter 
                         key={counter.id} 
