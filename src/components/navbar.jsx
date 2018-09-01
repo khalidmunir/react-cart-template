@@ -4,8 +4,8 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+        <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="#">
                 Pretend Cart App in React
             </a>
         </nav>
