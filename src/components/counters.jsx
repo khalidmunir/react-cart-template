@@ -5,7 +5,6 @@ import Counter from './counter'
 
 class Counters extends Component {
     state = {
-        // Note changing the value does not show on front end (DOM)
         counters: [
             { id: 1, value: 5 },
             { id: 2, value: 0 },
@@ -15,11 +14,15 @@ class Counters extends Component {
         ]
     }
 
+    handleDelete = () => {
+        console.log("Delete Event Handler Called")
+    }
+
     render() {
         return (
         <div>
             { this.state.counters.map( counter => (
-                <Counter key={counter.id} value={counter.value}>
+                <Counter key={counter.id} onDelete={this.handleDelete} value={counter.value} id={counter.id}>
                 </Counter>
             ))}    
         </div>

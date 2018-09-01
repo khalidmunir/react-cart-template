@@ -9,10 +9,6 @@ class Counter extends Component {
     }
 
     render() {
-
-        // episode: return of the props, check the console
-        // this time we should see children in the props
-        // Further inspection should show this is a react.element of h4 type 
         console.log("this.props", this.props)
         
         let classes = this.GetBadgeClasses();
@@ -26,6 +22,8 @@ class Counter extends Component {
                     className='btn btn-secondary btn-sm'>
                     Increment
                 </button>
+                <button onClick={this.props.onDelete} className='btn btn-danger btn-sm m-2'>Delete Me</button>
+
                 { this.state.value === 0 && <span className='m-2'>Please Increment the counter [remove this message]</span>}
             </div>
 
