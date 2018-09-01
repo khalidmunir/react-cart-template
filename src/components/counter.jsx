@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 class Counter extends Component { 
     state = {
-        count: this.props.value,
+        value: this.props.value,
     }
 
     handleIncrement = product => {  
-        this.setState( {count: this.state.count + 1 } )
+        this.setState( {value: this.state.value + 1 } )
     }
 
     render() {
@@ -26,7 +26,7 @@ class Counter extends Component {
                     className='btn btn-secondary btn-sm'>
                     Increment
                 </button>
-                { this.state.count === 0 && <span className='m-2'>Please Increment the counter [remove this message]</span>}
+                { this.state.value === 0 && <span className='m-2'>Please Increment the counter [remove this message]</span>}
             </div>
 
         </React.Fragment>
@@ -35,12 +35,12 @@ class Counter extends Component {
 
     GetBadgeClasses() {
         let classes = 'badge m-2 badge-';
-        classes += (this.state.count === 0) ? 'warning' : 'primary';
+        classes += (this.state.value === 0) ? 'warning' : 'primary';
         return classes;
     }
 
     formattedCount() {
-        const { count } = this.state
+        const { value: count } = this.state
         return count === 0 ? 'Its Zero' : 'Its ' + count
     }
 }
