@@ -14,7 +14,7 @@ class Counter extends Component {
             <span className={ classes }> { this.formattedCount() } </span>
             <button className='btn btn-secondary btn-sm'>Increment</button>
             <ul>
-                { this.state.listItems.map( item => <li>{item}</li>)}
+                { this.state.listItems.map( item => <li key={item}>{item}</li>)}
             </ul>
         </React.Fragment>
         )
