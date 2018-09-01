@@ -12,7 +12,6 @@ class Counter extends Component {
         console.log("this.props", this.props)
         
         let classes = this.GetBadgeClasses();
-        // Check the colsole.log to see if the wiring works (i.e. delete event logged with Id)
         return (
             <React.Fragment>
             <div>

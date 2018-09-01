@@ -15,7 +15,9 @@ class Counters extends Component {
     }
 
     handleDelete = (counterId) => {
-        console.log("Delete Event Handler Called", counterId)
+        // now fix the delete counter and allow react to update the DOM
+        const counters = this.state.counters.filter(counter => counter.id !== counterId)
+        this.setState({ counters})
     }
 
     render() {
