@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 class Counter extends Component { 
     state = {
         count: 0,
+        listItems: [ 'Luke', 'Han', 'Leia', 'Chewy', 'Jabba' ]
     }
 
     render() {
@@ -12,6 +13,9 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button className='btn btn-secondary btn-sm'>Increment</button>
+            <ul>
+                { this.state.listItems.map( item => <li>{item}</li>)}
+            </ul>
         </React.Fragment>
         )
     }
