@@ -14,8 +14,8 @@ class Counters extends Component {
         ]
     }
 
-    handleDelete = () => {
-        console.log("Delete Event Handler Called")
+    handleDelete = (counterId) => {
+        console.log("Delete Event Handler Called", counterId)
     }
 
     render() {
