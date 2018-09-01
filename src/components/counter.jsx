@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 class Counter extends Component {
  
     render() {
-        console.log("this.props", this.props)
         
         let classes = this.GetBadgeClasses();
         return (

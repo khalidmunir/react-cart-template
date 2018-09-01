@@ -1,30 +1,7 @@
 import React, { Component } from 'react'
 
 import Counter from './counter'
-
-// Next lets start adding some real structure to the app. 
-// currently the Counters id the root element for the app. 
-// Lets change this so that we wire back the APP components
-// under this we will have a navbar and the counters
-// under the Counters will be the Counter.
-
-// Then (maybe you can see this already) we will move the state up to the APP
-// and so it may serve some props to the NavBar and the Counters
-//
-//           ------------
-//           |  APP     |  <-- Move State Here
-//           ------------
-//             /       \
-//  ------------       ------------
-//  |  NavBar  |       | Counters | 
-//  ------------       ------------
-//                           |
-//                     ------------
-//                     | Counter  | 
-//                     ------------
-//  
 class Counters extends Component {
-
 
     render() {
         return (
