@@ -22,13 +22,16 @@ class Counters extends Component {
 
     render() {
         return (
+            // Adding more attributes to counter might make this parameter list 
+            // a little large and unmanagable. 
+            // just pass the counter down since it contains everything.
+            // i.e. counter={counter} then refactor the Counter code
             <div>
                 { this.state.counters.map( counter => (
                     <Counter 
                         key={counter.id} 
                         onDelete={this.handleDelete} 
-                        value={counter.value} 
-                        id={counter.id}>
+                        counter={counter}>
                     </Counter>
                 ))}    
             </div>
