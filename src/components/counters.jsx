@@ -20,8 +20,12 @@ class Counters extends Component {
     }
 
     handleIncrement = (counter) => {
-        console.log('counter', counter)
-
+        const counters = [ ...this.state.counters]
+        const index = counters.indexOf(counter)
+        counters[index] = { ...counter }
+        counters[index].value++
+        
+        console.log('counter', this.state.counters[index])
     }
     // So try this - it might surprise you this does not update the DOM.
     // the state exists in the Counter and also the Counters, so we are missing 
