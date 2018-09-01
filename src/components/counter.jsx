@@ -5,6 +5,13 @@ class Counter extends Component {
         listItems: [ /* 'Luke', 'Han', 'Leia', 'Chewy', 'Jabba'*/ ]
     }
 
+    constructor() {
+        // have to call the superclass first
+        super() 
+        console.log(this)
+        
+    }
+
     handleIncrement() {
 
         // this will error out as 'undefined' if you inseact the console - 
