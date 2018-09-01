@@ -5,16 +5,9 @@ class Counter extends Component {
         listItems: [  'Luke', 'Han', 'Leia', 'Chewy', 'Jabba' ]
     }
 
-    // This updates the state correctly via the API -  now it will reflect on the DOM
     handleIncrement = (product) => {  
         console.log('Product ', product)
         this.setState( {count: this.state.count + 1 } )
-    }
-
-    // let create a middle function to do the actual call
-    doHandleIncrement = () => {
-        this.handleIncrement({ id: 1})
-        
     }
 
     render() {
@@ -25,13 +18,17 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button 
-                onClick={this.doHandleIncrement} 
+                // instead make this an inline function
+                // shows correctly in the console.
+                onClick={() => {
+                    this.handleIncrement({ id: 1})
+                    
+                }} 
                 className='btn btn-secondary btn-sm'>
                 Increment
             </button>
             { this.state.count === 0 && 'Please Increment the counter'}
             {this.renderList()}
-
 
         </React.Fragment>
         )
