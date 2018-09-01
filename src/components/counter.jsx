@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 class Counter extends Component { 
     state = {
         count: 0,
-        listItems: [  'Luke', 'Han', 'Leia', 'Chewy', 'Jabba' ]
     }
 
     handleIncrement = product => {  
@@ -15,26 +14,17 @@ class Counter extends Component {
         
         return (
             <React.Fragment>
-            <span className={ classes }> { this.formattedCount() } </span>
-            <button 
-                onClick={() => this.handleIncrement({ id: 1})} 
-                className='btn btn-secondary btn-sm'>
-                Increment
-            </button>
-            { this.state.count === 0 && 'Please Increment the counter'}
-            {this.renderList()}
+            <div>
+                <span className={ classes }> { this.formattedCount() } </span>
+                <button 
+                    onClick={() => this.handleIncrement({ id: 1})} 
+                    className='btn btn-secondary btn-sm'>
+                    Increment
+                </button>
+                { this.state.count === 0 && <span className='m-2'>Please Increment the counter [remove this message]</span>}
+            </div>
 
         </React.Fragment>
-        )
-    }
-    
-    renderList() {
-        if (this.state.listItems.length === 0 ) return <p>There is no List <br />(This is not the list your looking for! :)</p>
-        
-        return (
-            <ul>
-                { this.state.listItems.map( item => <li key={item}>{item}</li> ) }
-            </ul>
         )
     }
 
@@ -46,7 +36,7 @@ class Counter extends Component {
 
     formattedCount() {
         const { count } = this.state
-        return count === 0 ? 'Its Zero' : count
+        return count === 0 ? 'Its Zero' : 'Its ' + count
     }
 }
 
