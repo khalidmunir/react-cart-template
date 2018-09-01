@@ -5,10 +5,16 @@ class Counter extends Component {
         listItems: [ /* 'Luke', 'Han', 'Leia', 'Chewy', 'Jabba'*/ ]
     }
 
-    // This is possibly the nicest way to write this code 
-    // while it would still be binded to the current object.
-    handleIncrement = () => {  
-        console.log('Increment Clicked', this)
+    // This updates the state correctly via the API -  now it will reflect on the DOM
+    handleIncrement = (product) => {  
+        console.log('Product ', product)
+        this.setState( {count: this.state.count + 1 } )
+    }
+
+    // let create a middle function to do the actual call
+    doHandleIncrement = () => {
+        console.log('In doHandleInrement')
+        this.handleIncrement({ id: 1 })
     }
 
     render() {
@@ -19,7 +25,7 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button 
-                onClick={this.handleIncrement} 
+                onClick={this.doHandleIncrement} 
                 className='btn btn-secondary btn-sm'>
                 Increment
             </button>
