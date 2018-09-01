@@ -9,18 +9,13 @@ class Counter extends Component {
         // have to call the superclass first
         super() 
         console.log(this)
-        
+
+        // Now can see the 'this' in handleIncrement since were binding in constructor
+        this.handleIncrement = this.handleIncrement.bind(this)
     }
 
-    handleIncrement() {
-
-        // this will error out as 'undefined' if you inseact the console - 
-        // This is because you dont have access to the 'this' variable as you might see it, 
-        // we should use ES6 style arrow functions, thus allowing us to bind this
-        // without the cumbersome registering it in the constructor for every class.
-        //
-        // this is good news for react 16 onwards - :)
-        console.log('Increment Clicked' , this)
+    handleIncrement() {  
+        console.log('Increment Clicked', this)
     }
 
     render() {
