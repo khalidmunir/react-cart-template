@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 class Counter extends Component { 
     state = {
         count: 0,
-        listItems: [ /* 'Luke', 'Han', 'Leia', 'Chewy', 'Jabba'*/ ]
+        listItems: [  'Luke', 'Han', 'Leia', 'Chewy', 'Jabba' ]
     }
 
     // This updates the state correctly via the API -  now it will reflect on the DOM
@@ -13,8 +13,8 @@ class Counter extends Component {
 
     // let create a middle function to do the actual call
     doHandleIncrement = () => {
-        console.log('In doHandleInrement')
-        this.handleIncrement({ id: 1 })
+        this.handleIncrement({ id: 1})
+        
     }
 
     render() {
@@ -25,11 +25,11 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button 
-                onClick={this.doHandleIncrement} 
+                onClick={this.handleIncrement} 
                 className='btn btn-secondary btn-sm'>
                 Increment
             </button>
-            { this.state.listItems.length === 0 && 'Please add items to List'}
+            { this.state.count === 0 && 'Please Increment the counter'}
             {this.renderList()}
 
 
