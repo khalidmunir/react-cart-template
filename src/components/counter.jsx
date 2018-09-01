@@ -5,16 +5,9 @@ class Counter extends Component {
         listItems: [ /* 'Luke', 'Han', 'Leia', 'Chewy', 'Jabba'*/ ]
     }
 
-    constructor() {
-        // have to call the superclass first
-        super() 
-        console.log(this)
-
-        // Now can see the 'this' in handleIncrement since were binding in constructor
-        this.handleIncrement = this.handleIncrement.bind(this)
-    }
-
-    handleIncrement() {  
+    // This is possibly the nicest way to write this code 
+    // while it would still be binded to the current object.
+    handleIncrement = () => {  
         console.log('Increment Clicked', this)
     }
 
@@ -49,7 +42,6 @@ class Counter extends Component {
     }
 
     GetBadgeClasses() {
-        // moved out of render method - don't bloat the render function - where possible  
         let classes = 'badge m-2 badge-';
         classes += (this.state.count === 0) ? 'warning' : 'primary';
         return classes;
