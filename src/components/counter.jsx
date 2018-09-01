@@ -9,6 +9,11 @@ class Counter extends Component {
     }
 
     render() {
+
+        // episode: return of the props, check the console
+        // this time we should see children in the props
+        // Further inspection should show this is a react.element of h4 type 
+        console.log("this.props", this.props)
         
         let classes = this.GetBadgeClasses();
         
