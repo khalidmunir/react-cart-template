@@ -13,7 +13,10 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button className='btn btn-secondary btn-sm'>Increment</button>
+            { this.state.listItems.length === 0 && 'Please add items to List'}
             {this.renderList()}
+
+
         </React.Fragment>
         )
     }
