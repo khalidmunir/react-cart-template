@@ -19,6 +19,10 @@ class Counters extends Component {
         this.setState({ counters })
     }
 
+    handleIncrement = (counter) => {
+        console.log('counter', counter)
+
+    }
     // So try this - it might surprise you this does not update the DOM.
     // the state exists in the Counter and also the Counters, so we are missing 
     // a single source of truth. 
@@ -45,6 +49,7 @@ class Counters extends Component {
                     <Counter 
                         key={counter.id} 
                         onDelete={this.handleDelete} 
+                        onIncrement={this.handleIncrement}
                         counter={counter}>
                     </Counter>
                 ))}    
