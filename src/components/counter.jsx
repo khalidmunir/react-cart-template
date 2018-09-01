@@ -5,8 +5,7 @@ class Counter extends Component {
         listItems: [  'Luke', 'Han', 'Leia', 'Chewy', 'Jabba' ]
     }
 
-    handleIncrement = (product) => {  
-        console.log('Product ', product)
+    handleIncrement = product => {  
         this.setState( {count: this.state.count + 1 } )
     }
 
@@ -18,12 +17,7 @@ class Counter extends Component {
             <React.Fragment>
             <span className={ classes }> { this.formattedCount() } </span>
             <button 
-                // instead make this an inline function
-                // shows correctly in the console.
-                onClick={() => {
-                    this.handleIncrement({ id: 1})
-                    
-                }} 
+                onClick={() => this.handleIncrement({ id: 1})} 
                 className='btn btn-secondary btn-sm'>
                 Increment
             </button>
