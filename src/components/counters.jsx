@@ -2,7 +2,27 @@ import React, { Component } from 'react'
 
 import Counter from './counter'
 
+// Next lets start adding some real structure to the app. 
+// currently the Counters id the root element for the app. 
+// Lets change this so that we wire back the APP components
+// under this we will have a navbar and the counters
+// under the Counters will be the Counter.
 
+// Then (maybe you can see this already) we will move the state up to the APP
+// and so it may serve some props to the NavBar and the Counters
+//
+//           ------------
+//           |  APP     |  <-- Move State Here
+//           ------------
+//             /       \
+//  ------------       ------------
+//  |  NavBar  |       | Counters | 
+//  ------------       ------------
+//                           |
+//                     ------------
+//                     | Counter  | 
+//                     ------------
+//  
 class Counters extends Component {
     state = {
         counters: [
@@ -18,11 +38,6 @@ class Counters extends Component {
         const counters = this.state.counters.filter(counter => counter.id !== counterId)
         this.setState({ counters })
     }
-
-    // a single source of truth. 
-    // we have achieved this by removing the local state of the counter and raising it here.
-    // In the Counter THe code was refactored to remve refrences to the state and insted relyed on props
-    // Also moved the increment responsibility - raised to the Counters 
 
     handleIncrement = (counter) => {
         const counters = [ ...this.state.counters]
