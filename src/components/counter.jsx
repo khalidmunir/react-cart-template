@@ -15,7 +15,7 @@ class Counter extends Component {
 
     formattedCount() {
         const { count } = this.state
-        return count === 0 ? 'Its Zero' : count
+        return count === 0 ? <h1>Its Zero</h1> : count
     }
 }
 
