@@ -8,21 +8,20 @@ class Counter extends Component {
         let classes = this.GetBadgeClasses();
         return (
             <React.Fragment>
-            <div>
-                <span className={ classes }> { this.formattedCount() } </span>
-                <button 
-                    onClick={ () => this.props.onIncrement(counter)} 
-                    className='btn btn-secondary btn-sm'>
-                    Increment
-                </button>
-                <button 
-                    onClick={ () => this.props.onDelete(counter.id)} 
-                    className='btn btn-danger btn-sm m-2'>Delete Me</button>
+                <div>
+                    <span className={ classes }> { this.formattedCount() } </span>
+                    <button 
+                        onClick={ () => this.props.onIncrement(counter)} 
+                        className='btn btn-secondary btn-sm'>
+                        Increment
+                    </button>
+                    <button 
+                        onClick={ () => this.props.onDelete(counter.id)} 
+                        className='btn btn-danger btn-sm m-2'>Delete Me</button>
 
-                { counter.value === 0 && <span className='m-2'>Please Increment the counter [remove this message]</span>}
-            </div>
-
-        </React.Fragment>
+                    { counter.value === 0 && <span className='m-2'>Please Increment the counter [remove this message]</span>}
+                </div>
+            </React.Fragment>
         )
     }
 

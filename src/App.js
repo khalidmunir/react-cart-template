@@ -3,9 +3,6 @@ import './App.css';
 import NavBar from './components/navbar'
 import Counters from './components/counters'
 
-//
-//  Check the console for logs showing lifecycle hooks and order they are called
-//
 class App extends Component {
 
   state = {
@@ -44,7 +41,6 @@ class App extends Component {
   render() {
   
     return (
-
       <React.Fragment>
         <NavBar 
           totalCounters={this.state.counters.length} 
