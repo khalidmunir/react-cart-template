@@ -7,20 +7,6 @@ import Counters from './components/counters'
 //  Check the console for logs showing lifecycle hooks and order they are called
 //
 class App extends Component {
-  constructor() {
-    super()
-    console.log("LIFECYCLE CHECK: App Constructor")
-  }
-
-  componentWillMount() {
-    console.log("LIFECYCLE CHECK: App ComponentWillMount")
-  }
-
-  componentDidMount() {
-    // ideal place to do ajax call 
-    // then setState
-    console.log("LIFECYCLE CHECK: App componentDidMount")
-  }
 
   state = {
     counters: [
@@ -56,8 +42,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("LIFECYCLE CHECK: App Render()-method-called")
-
+  
     return (
 
       <React.Fragment>

@@ -1,32 +1,8 @@
 import React, { Component } from 'react'
 class Counter extends Component {
-    constructor() {
-        super()
-        console.log("LIFECYCLE CHECK: Counter Constructor")
-    }
-    
-    componentWillMount() {
-        console.log("LIFECYCLE CHECK: Counter ComponentWillMount")
-    }
-        
-    componentDidUpdate(prevProps, prevState) {
-        console.log("LIFECYCLE CHECK: Counter componentDidUpdate")
-        console.log("LIFECYCLE CHECK: Counter componentDidUpdate, prevProps", prevProps)
-        console.log("LIFECYCLE CHECK: Counter componentDidUpdate, prevState", prevState)
-        
-    }
-
-    componentDidMount() {
-        console.log("LIFECYCLE CHECK: Counter componentDidMount")
-    }
-
-    componentWillUnmount() {
-        console.log("LIFECYCLE CHECK: Counter componentDidUnmount")
-    }
 
     render() {
 
-        console.log("LIFECYCLE CHECK: Counter Render()-method-called")
         const { counter } = this.props
         
         let classes = this.GetBadgeClasses();
